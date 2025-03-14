@@ -345,6 +345,67 @@ section .button button:hover{
 .services .boxes .box:hover p{
   color: #fff;
 }
+
+/* Testimonial Section */
+/* Testimonials Container */
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  justify-content: center; /* Centers cards in the row */
+  gap: 3vh; /* Space between cards */
+  padding: 5vh 2vw;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card {
+  background: #ffffff;
+  padding: 3vh 4vw;
+  border-radius: 2vh;
+  max-width: 20vw; /* Adjust width */
+  text-align: center;
+  box-shadow: 0 0.4vh 1vh rgba(0, 0, 0, 0.1);
+  font-size: 2vh;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ensure Cards Are Side-by-Side */
+.testimonial-card {
+  flex: 1 1 300px; /* Ensures cards take equal width */
+}
+
+/* Testimonial Footer */
+.testimonial-footer {
+  text-align: center;
+  font-size: 2.5vh;
+  font-weight: 500;
+  margin-top: 4vh;
+  color: #555;
+}
+
+.testimonial-footer span {
+  font-weight: bold;
+  color: #ff7f27; /* Highlighted color */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    max-width: 80vw;
+    font-size: 2vh;
+  }
+}
+
+
 /* Contact Me CSS */
 .contact{
   background: #F0F8FF;
@@ -358,6 +419,24 @@ section .button button:hover{
   text-align: center;
   margin: auto;
 }
+
+.google-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.google-form iframe {
+  max-width: 700px; /* Set a max width for better aesthetics */
+  width: 100%;
+  height: 700px; /* Adjust height based on form length */
+  border-radius: 10px; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  border: none;
+}
+
+
 /* Footer CSS */
 footer{
   background: #4070f4;

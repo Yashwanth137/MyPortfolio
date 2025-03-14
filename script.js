@@ -38,3 +38,11 @@ let navLinks = document.querySelectorAll(".menu li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", hideNavMenu);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".testimonial-slider", {
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+});

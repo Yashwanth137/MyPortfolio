@@ -1,126 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <!-- Move to up button -->
-    <div class="scroll-button">
-      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Swiper.js CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="#about">About me</a></div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#Testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="https://www.youtube.com/@KARTHIKEYAKUSUMA"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/karthikeya-kusuma-bb5535304/"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
-    <!-- Navigation Menu -->
-    <nav>
-      <div class="navbar">
-        <div class="logo"><a href="#about">About me</a></div>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#skills">Testimonials</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <div class="cancel-btn">
-            <i class="fas fa-times"></i>
-          </div>
-        </ul>
-        <div class="media-icons">
-          <a href="#"><i class="fab fa-medium"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section class="home" id="home">
-      <div class="home-content">
-        <div class="text">
-          <div class="text-one">Hello,</div>
-          <div class="text-two">I'm Karthikeya Kusuma</div>
-          <div class="text-three">Math Tutor</div>
-          <div class="text-four">I help students unleash their math potential.</div>
-        </div>
-        <div class="button">
-          <button>Book a call</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="content">
-        <div class="title"><span>About Me</span></div>
-        <div class="about-details">
-          <div class="left">
-            <img src="images/pic.jpg" alt="Profile Picture" />
-          </div>
-          <div class="right">
-            <div class="topic">Math Is My Passion</div>
-            <p>
-              I'm Karthikeya Kusuma. Transformed the academic journeys of over 20 high school students across the globe—from the bustling classrooms of Texas and the sunny coasts of North and South Florida, to the rolling hills of West Virginia, the vibrant cities of Canada and London, and the dynamic communities of India. Through personalized 1-1 guidance, I’ve helped them not only master their mathematical skills but also discover their confidence and passion for learning.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-      <div class="content">
-        <div class="title"><span>My Services</span></div>
-        <div class="boxes">
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <div class="topic">USCC Curriculum</div>
-            <p>Teaching the United States Common Core curriculum, including competitive exams like PSAT and SAT, with personalized strategies.</p>
-          </div>
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-book-open"></i>
-            </div>
-            <div class="topic">Indian Curriculum</div>
-            <p>Expert coaching for IIT JEE (Mains & Advanced), helping students master concepts and problem-solving techniques.</p>
-          </div>
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <div class="topic">GCSE Curriculum</div>
-            <p>Comprehensive tutoring for K-12 students following the GCSE syllabus, ensuring a strong foundation in mathematics.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="content">
-        <div class="title"><span>Contact Me</span></div>
-        <div class="text">
-          <div class="topic">Have Any Questions?</div>
-          <p>Reach out to discuss your learning needs. Whether you need help with school, competitive exams, or general math skills, I'm here to guide you.</p>
-          <div class="button">
-            <button>Let's Chat</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
       <div class="text">
-        <span>Karthikeya Kusuma | &#169; 2025 All Rights Reserved</span>
+        <div class="text-one">Hello,</div>
+        <div class="text-two">I'm Karthikeya Kusuma</div>
+        <div class="text-three">Math Tutor</div>
+        <div class="text-four">I help students unleash their math potential.</div>
+        <div class="text-four">Book a call here to unleash your child's potential now.</div>
       </div>
-    </footer>
+      <div class="button">
+        <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank">
+          <button>Book a Call</button>
+        </a>
+      </div>
 
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title"><span>About Me</span></div>
+      <div class="about-details">
+        <div class="left">
+          <img src="images/pic.jpg" alt="Profile Picture" />
+        </div>
+        <div class="right">
+          <div class="topic">Math Is My Passion</div>
+          <p>
+            I’m Karthikeya Kusuma, a dedicated educator with a passion for transforming students’ academic journeys.
+            With a strong foundation in mathematics and an undergraduate degree from an NIT in India, I have guided over
+            20 high school students worldwide—from the bustling classrooms of Texas, the sunny coasts of North and South
+            Florida, and the rolling hills of West Virginia, to the vibrant cities of Canada and London and the dynamic
+            communities of India.</p>
+          <br>
+          <p>
+            Through personalized one-on-one mentorship, I have helped students not only master complex mathematical
+            concepts but also build confidence, develop problem-solving skills, and cultivate a lifelong passion for
+            learning. My approach focuses on tailoring lessons to each student’s strengths and challenges, ensuring they
+            achieve academic excellence while gaining a deeper appreciation for the subject.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="content">
+      <div class="title"><span>My Services</span></div>
+      <div class="boxes">
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="topic">USCC Curriculum</div>
+          <p>Teaching the United States Common Core curriculum, including competitive exams like PSAT and SAT, with
+            personalized strategies.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <div class="topic">Indian Curriculum</div>
+          <p>Expert coaching for IIT JEE (Mains & Advanced), helping students master concepts and problem-solving
+            techniques.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="topic">GCSE Curriculum</div>
+          <p>Comprehensive tutoring for K-12 students following the GCSE syllabus, ensuring a strong foundation in
+            mathematics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="Testimonials">
+  <div class="content">
+    <div class="title"><span>What Students & Parents Say</span></div>
+
+    <div class="testimonial-container">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <img src="images/student1.jpg" alt="Student 1">
+        <h4>Sanjay, Grade 6</h4>
+        <p>Received prestigious President Education Awards Program from the President of the US.</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <img src="images/student2.jpg" alt="Student 2">
+        <h4>Bela, Grade 6</h4>
+        <p>Tops her class with an outstanding score of 77.5/80.</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <img src="images/student3.jpg" alt="Student 3">
+        <h4>Vyom, Grade 8</h4>
+        <p>Received prestigious Pradhan Mantri Rashtriya Bal Puraskar from the Prime Minister of India.</p>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <img src="images/student4.jpg" alt="Student 4">
+        <h4>Charani, Grade 2</h4>
+        <p>Level 5 in the STAAR exam at Renaissance Institute for Competitive Exams.</p>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="testimonial-card">
+        <img src="images/student5.jpg" alt="Student 5">
+        <h4>Samuel, Grade 3</h4>
+        <p>Secured Rank 1 at SOF IMO Level 2023, by scoring an outstanding 100/100!</p>
+      </div>
+
+      <div class="testimonial-footer">
+        <p>...and many more, over <span>20+ satisfied parents and students</span>!</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="content">
+      <div class="title"><span>Contact Me</span></div>
+      <div class="text">
+        <div class="topic">Have Any Questions?</div>
+        <p>Fill out the form below, and I'll get back to you soon.</p>
+      </div>
+
+      <!-- Embedded Google Form -->
+      <div class="google-form">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSddUkD5BgGNf0E5Sb3cTAD-fxTV8uLDx7rAfmxH_l-AtGG5VQ/viewform?embedded=true"
+          width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="text">
+      <span>Karthikeya Kusuma | &#169; 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
