@@ -50,11 +50,22 @@ document.querySelectorAll(".menu li a").forEach((link) => {
   link.addEventListener("click", hideNavMenu);
 });
 
-// Testimonial Slider (SwiperJS)
 document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".testimonial-slider", {
-    loop: true,
-    autoplay: { delay: 3000 },
-    pagination: { el: ".swiper-pagination", clickable: true },
+  var swiper = new Swiper(".mySwiper", {
+    loop: true, // Enables infinite scrolling
+    autoplay: { 
+      delay: 2000, // Adjust speed as needed
+      disableOnInteraction: false, // Keeps autoplay running even after interaction
+    }, 
+    speed: 800, // Smooth transition speed
+    slidesPerView: "auto", // Allows multiple images at once
+    spaceBetween: 20, // Adjust spacing between images
+    centeredSlides: false, // Prevents forced centering
+    breakpoints: {
+      768: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
+      1024: { slidesPerView: 3, spaceBetween: 30 }, // Large screens
+    }
   });
 });
+
+

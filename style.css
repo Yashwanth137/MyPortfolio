@@ -108,6 +108,16 @@ nav.sticky .menu-btn{
   color: #fff;
 }
 /* home section styling */
+/* Styling for the Quote */
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555; /* Subtle color */
+  text-align: center;
+  margin: 20px 0; /* Adds spacing above & below */
+  max-width: 600px;
+}
+
 .home{
   height: 100vh;
   width: 100%;
@@ -269,6 +279,11 @@ section .button button:hover{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/* Center the second-row card */
+.boxes.row.center {
+  display: flex;
+  justify-content: center;
+}
 
 .services .boxes .box {
   margin: 20px 0;
@@ -322,12 +337,11 @@ section .button button:hover{
   background: #0E2431;
 }
 
-/* Testimonial Section */
 /* Testimonials Container */
 .testimonial-container {
   display: flex;
   flex-wrap: wrap; /* Ensures responsiveness */
-  justify-content: center; /* Centers cards in the row */
+  justify-content: center; /* Centers cards */
   gap: 3vh; /* Space between cards */
   padding: 5vh 2vw;
 }
@@ -335,38 +349,59 @@ section .button button:hover{
 /* Individual Testimonial Card */
 .testimonial-card {
   background: #ffffff;
-  padding: 3vh 4vw;
+  padding: 2vh;
   border-radius: 2vh;
-  max-width: 20vw; /* Adjust width */
+  max-width: 25vw; /* Adjust width */
   text-align: center;
   box-shadow: 0 0.4vh 1vh rgba(0, 0, 0, 0.1);
-  font-size: 2vh;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
-/* Ensure Cards Are Side-by-Side */
-.testimonial-card {
-  flex: 1 1 300px; /* Ensures cards take equal width */
+/* WhatsApp Screenshot Image */
+.testimonial-img {
+  width: 100%;
+  border-radius: 2vh;
+  transition: transform 0.2s ease-in-out;
+}
+
+.testimonial-img:hover {
+  transform: scale(1.05);
+}
+
+.close {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  font-size: 4vh;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Testimonial Footer */
 .testimonial-footer {
   text-align: center;
-  font-size: 2.5vh;
-  font-weight: 500;
-  margin-top: 4vh;
-  color: #555;
+  margin-top: 80px; /* Increased space below the images */
 }
 
-.testimonial-footer span {
+/* Highlighted Text */
+.highlighted-text {
+  font-size: 18px;
   font-weight: bold;
-  color: #ff7f27; /* Highlighted color */
+  color: #ff7f27; /* Adjust as needed */
 }
 
+/* Disclaimer */
+.disclaimer {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  margin-top: 5px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -377,7 +412,6 @@ section .button button:hover{
 
   .testimonial-card {
     max-width: 80vw;
-    font-size: 2vh;
   }
 }
 
@@ -519,6 +553,45 @@ footer .text span a:hover {
 .scroll-button a:hover {
   background: #3057d5; /* Darker shade on hover */
 }
+
+/* Swiper Container */
+.swiper {
+  max-width: 90%; /* Prevents extra spacing */
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px; /* Space below for better layout */
+}
+
+/* Swiper Wrapper */
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+}
+
+/* Swiper Images */
+.swiper-slide img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 350px;
+  object-fit: contain;
+  display: block;
+}
+
+/* REMOVE NAVIGATION ARROWS */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
 
 
 /* Responsive Media Query */
