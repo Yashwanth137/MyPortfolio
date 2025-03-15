@@ -28,7 +28,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#Testimonials">Testimonials</a></li>
-        <li><a href="#Contacts">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
         <div class="cancel-btn">
           <i class="fas fa-times"></i>
         </div>
@@ -124,42 +124,42 @@
   </section>
 
   <!-- Pricing Section -->
-<section class="services" id="pricing">
-  <div class="content">
+  <section class="services" id="pricing">
+    <div class="content">
       <div class="title"><span>Pricing</span></div>
       <div class="boxes">
-          <!-- London Pricing Card -->
-          <div class="box">
-              <div class="icon">
-                  <i class="fas fa-pound-sign"></i>
-              </div>
-              <div class="topic">London</div>
-              <p>£17.5 - £20 per class.</p>
-              <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        <!-- London Pricing Card -->
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-pound-sign"></i>
           </div>
+          <div class="topic">London</div>
+          <p>£17.5 - £20 per class.</p>
+          <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        </div>
 
-          <!-- Canada Pricing Card -->
-          <div class="box">
-              <div class="icon">
-                  <i class="fas fa-dollar-sign"></i>
-              </div>
-              <div class="topic">Canada</div>
-              <p>$22.5 - $25 USD per class.</p>
-              <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        <!-- Canada Pricing Card -->
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-dollar-sign"></i>
           </div>
+          <div class="topic">Canada</div>
+          <p>$22.5 - $25 USD per class.</p>
+          <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        </div>
 
-          <!-- USA High School Pricing Card -->
-          <div class="box">
-              <div class="icon">
-                  <i class="fas fa-chalkboard-teacher"></i>
-              </div>
-              <div class="topic">USA High School</div>
-              <p>$24.5 - $30.99 per 60 min class.</p>
-              <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        <!-- USA High School Pricing Card -->
+        <div class="box">
+          <div class="icon">
+            <i class="fas fa-chalkboard-teacher"></i>
           </div>
+          <div class="topic">USA High School</div>
+          <p>$24.5 - $30.99 per 60 min class.</p>
+          <a href="https://forms.gle/kV8bH8JhRCEwMYK59" target="_blank" class="book-btn">Book Now</a>
+        </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
 
   <!-- Testimonials Section -->
@@ -212,48 +212,63 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact" id="Contacts">
-    <h2 class="title">Contact Me</h2>
-    <p class="text">Have a question about math or want to schedule a session? Fill out the form below!</p>
+  <section class="contact" id="contact">
+    <div class="content">
+      <div class="title"><span>Contact Me</span></div>
+      <div class="text">Need help with math? Send me a message!</div>
 
-    <div class="contact-form">
-      <form name="contact" netlify onsubmit="showThankYou(event)">
-        <div class="input-box">
-          <label>Your Name</label>
-          <input type="text" name="name" required />
+      <!-- Contact Form -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="c71ddd4b-379b-4776-942d-a15cd01e1d80 " />
+
+        <!-- Name Field -->
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
         </div>
 
-        <div class="input-box">
-          <label>Your Email</label>
-          <input type="email" name="email" required />
+        <!-- Email Field -->
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
         </div>
 
-        <div class="input-box">
-          <label>Your Message</label>
-          <textarea name="message" required></textarea>
+        <!-- Message Field -->
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="send-message-btn">Send Message</button>
+        <!-- Submit Button -->
+        <button type="submit" class="contact-btn">Send Message</button>
+
+        <!-- Success Message (Hidden by Default) -->
+        <p class="success-message" style="display: none;">Thank you! Your message has been sent.</p>
       </form>
-
-      <!-- Hidden Thank You Message -->
-      <p id="thank-you-msg">
-        ✅ Thank you! Your message has been received. I'll get back to you soon!
-      </p>
     </div>
   </section>
-
   <script>
-    function showThankYou(event) {
-      event.preventDefault(); // Prevents page reload
-      document.querySelector("form").style.display = "none"; // Hides form
-      document.getElementById("thank-you-msg").style.display = "block"; // Shows message
-    }
+    document.querySelector(".contact-form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default form submission
+
+      const form = this;
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.success) {
+            form.reset(); // Clear form fields
+            document.querySelector(".success-message").style.display = "block"; // Show success message
+          }
+        })
+        .catch((error) => console.error("Error:", error));
+    });
   </script>
-
-
-
-
 
 
 
