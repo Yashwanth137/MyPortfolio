@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio</title>
+  <title>Karthik Kusuma</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -73,10 +73,17 @@
         <div class="right">
           <div class="topic">Math Is My Passion</div>
           <p>
-            I'm Karthikeya Kusuma, An engineer graduate from one of the most prestigious colleges of India, NIT WARANGAL.
-I'm on a mission to help other high school students achieve their dream university of their choice., I have guided over
-            20 high school students worldwide—from the bustling classrooms of Texas, the sunny coasts of North and South
-            Florida, and the rolling hills of West Virginia, to the vibrant cities of Canada and London and the dynamic
+            I'm Karthikeya Kusuma. I proudly hold an engineering degree from NIT Warangal, one of India’s most
+            prestigious institutions. I’ve embarked on a mission to guide and inspire high school students to turn their
+            dreams into reality. My goal? To help them secure a spot at their dream university.
+          </p>
+          <br>
+          <h2 style="color: #0E2431; font-size: 25px; font-weight: 500;">Students taught</h2>
+          <p>
+            I have guided over 20 high school students worldwide—from the bustling classrooms of Texas, the sunny coasts
+            of
+            North and South Florida, and the rolling hills of West Virginia, to the vibrant cities of Canada and London
+            and the dynamic
             communities of India.</p>
           <br>
           <p>
@@ -222,32 +229,49 @@ I'm on a mission to help other high school students achieve their dream universi
         <!-- Web3Forms Access Key -->
         <input type="hidden" name="access_key" value="c71ddd4b-379b-4776-942d-a15cd01e1d80" />
 
-        <!-- Name Field -->
+        <!-- Name Field (Required) -->
         <div class="input-group">
-          <label for="name">Name</label>
+          <label for="name">Name <span class="required">*</span></label>
           <input type="text" id="name" name="name" required>
         </div>
 
-        <!-- Email Field -->
+        <!-- Mobile Field (Required) -->
         <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <label for="mobile">Mobile <span class="required">*</span></label>
+          <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10,15}" placeholder="Enter mobile number">
         </div>
 
-        <!-- Message Field -->
+        <!-- Student’s Grade -->
         <div class="input-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="grade">Student’s Grade</label>
+          <input type="text" id="grade" name="grade" placeholder="e.g. 8th Grade">
+        </div>
+
+        <!-- Math Score -->
+        <div class="input-group">
+          <label for="math_score">Math Score (Average)</label>
+          <input type="number" id="math_score" name="math_score" min="0" max="100" placeholder="e.g. 85">
+        </div>
+
+        <!-- Email (Optional) -->
+        <div class="input-group">
+          <label for="email">Email (Optional)</label>
+          <input type="email" id="email" name="email" placeholder="Enter email (optional)">
+        </div>
+
+        <!-- Parents' Expectations -->
+        <div class="input-group">
+          <label for="expectations">Parents’ Expectations from Tutor</label>
+          <textarea id="expectations" name="expectations" rows="4" placeholder="Write your expectations..."></textarea>
         </div>
 
         <!-- Submit Button -->
         <button type="submit" class="contact-btn">Send Message</button>
-
-        <!-- Success Message (Hidden by Default) -->
-        <p class="success-message" style="display: none;">Thank you! Your message has been sent.</p>
       </form>
     </div>
   </section>
+
+  <!-- JavaScript -->
   <script>
     document.querySelector(".contact-form").addEventListener("submit", function (e) {
       e.preventDefault(); // Prevent default form submission
@@ -262,22 +286,70 @@ I'm on a mission to help other high school students achieve their dream universi
         .then((response) => response.json())
         .then((result) => {
           if (result.success) {
-            form.reset(); // Clear form fields
-            document.querySelector(".success-message").style.display = "block"; // Show success message
+            window.location.href = "thank-you.html"; // Redirect to Thank You page
+          } else {
+            alert("Something went wrong! Please try again.");
           }
         })
-        .catch((error) => console.error("Error:", error));
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Error sending message. Please check your connection.");
+        });
     });
   </script>
 
+  <!-- CSS (Optional for Better Design) -->
+  <style>
+    .required {
+      color: red;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .contact-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
 
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="text">
-      <span>Karthikeya Kusuma | &#169; 2025 All Rights Reserved</span>
-    </div>
-  </footer>
+<!-- Footer Section -->
+<footer>
+  <div class="text">
+    <span>
+      <a href="https://www.linkedin.com/in/karthikeya-kusuma-bb5535304/" target="_blank">Karthikeya Kusuma</a> | &#169; 2025 All Rights Reserved
+    </span>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-button">
+  <a href="#top" id="scrollTopBtn">&#8679;</a>
+</div>
+
 
   <script src="script.js"></script>
 </body>

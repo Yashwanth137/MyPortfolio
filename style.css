@@ -474,38 +474,53 @@ section .button button:hover{
 
 
 
-/* Footer CSS */
-footer{
+/* Footer Styling */
+footer {
   background: #4070f4;
-  padding: 15px 0;
+  padding: 20px 0;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
-footer .text span{
+
+footer .text span {
   font-size: 17px;
   font-weight: 400;
   color: #fff;
 }
-footer .text span a{
+
+footer .text span a {
   font-weight: 500;
   color: #FFF;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
-footer .text span a:hover{
+
+footer .text span a:hover {
   text-decoration: underline;
+  color: #ffd700; /* Gold color on hover */
 }
-/* Scroll TO Top Button CSS */
-.scroll-button a{
+
+/* Scroll to Top Button */
+.scroll-button a {
   position: fixed;
   bottom: 20px;
   right: 20px;
   color: #fff;
   background: #4070f4;
-  padding: 7px 12px;;
+  padding: 10px 14px;
   font-size: 18px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.15);
-  display: none;
+  display: none; /* Hidden by default */
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
 }
+
+.scroll-button a:hover {
+  background: #3057d5; /* Darker shade on hover */
+}
+
+
 /* Responsive Media Query */
 @media (max-width: 1190px) {
   section .content{
