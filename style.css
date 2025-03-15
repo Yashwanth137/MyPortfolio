@@ -161,6 +161,16 @@ nav.sticky .menu-btn{
   background-color: #fff;
   color: #4070f4;
 }
+
+/* Remove background on smaller screens */
+@media (max-width: 1440px) {
+  .home {
+      background: none; /* Removes the background image */
+      background-color: #F0F8FF; /* Set a solid background color */
+  }
+}
+
+
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
  I'm Selecting Directly 'Section Tag' and 'Class'  */
@@ -247,80 +257,32 @@ section .button button:hover{
   background-color: #fff;
   color: #4070f4;
 }
- /* My Skills CSS *
- .skills{
-   background: #F0F8FF;
- }
- .skills .content{
-   padding: 40px 0;
- }
- .skills .skills-details{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
- }
- .skills-details .text{
-   width: 50%;
- }
- .skills-details p{
-   color: #0E2431;
-   text-align: justify;
- }
-.skills .skills-details .experience{
-  display: flex;
-  align-items: center;
-  margin: 0 10px;
-}
-.skills-details .experience .num{
-  color: #0E2431;
-  font-size: 80px;
-}
-.skills-details .experience .exp{
-  color: #0E2431;
-  margin-left: 20px;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0 6px;
-}
-.skills-details .boxes{
-  width: 45%;
+
+/* Pricing Section - Same Layout as Services */
+.services .boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.skills-details .box{
-  width: calc(100% / 2 - 20px);
-  margin: 20px 0;
-}
-.skills-details .boxes .topic{
-  font-size: 20px;
-  color: #4070f4;
-}
-.skills-details .boxes .per{
-  font-size: 60px;
-  color: #4070f4;
-}
-/* My Services CSS */
-.services .boxes{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.services .boxes .box{
+
+.services .boxes .box {
   margin: 20px 0;
   width: calc(100% / 3 - 20px);
   text-align: center;
   border-radius: 12px;
   padding: 30px 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  cursor: default;
   transition: all 0.4s ease;
+  background: #fff;
 }
-.services .boxes .box:hover{
+
+/* Hover Effect */
+.services .boxes .box:hover {
   background: #4070f4;
   color: #fff;
 }
-.services .boxes .box .icon{
+
+.services .boxes .box .icon {
   height: 50px;
   width: 50px;
   background: #4070f4;
@@ -332,18 +294,27 @@ section .button button:hover{
   margin: 0 auto 10px auto;
   transition: all 0.4s ease;
 }
-.boxes .box:hover .icon{
+
+.boxes .box:hover .icon {
   background-color: #fff;
   color: #4070f4;
 }
-.services .boxes .box:hover .topic,
-.services .boxes .box:hover p{
-  color: #0E2431;
-  transition: all 0.4s ease;
-}
-.services .boxes .box:hover .topic,
-.services .boxes .box:hover p{
+
+/* Book Now Button */
+.book-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
   color: #fff;
+  background: #4070f4;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #0E2431;
 }
 
 /* Testimonial Section */
@@ -406,35 +377,148 @@ section .button button:hover{
 }
 
 
-/* Contact Me CSS */
-.contact{
-  background: #F0F8FF;
-}
-.contact .content{
-  margin: 0 auto;
-  padding: 30px 0;
-}
-.contact .text{
-  width: 80%;
+/* Contact Section */
+/* Contact Section */
+.contact {
+  padding: 8vh 5vw;
   text-align: center;
-  margin: auto;
+  background: #F0F8FF;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.google-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+/* Contact Title - Same Effect as Pricing & Services */
+.contact .title {
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 2vh;
+  color: #0E2431;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-.google-form iframe {
-  max-width: 700px; /* Set a max width for better aesthetics */
+/* Underline Effect */
+.contact .title::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  background: #4070f4;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.contact .title:hover::after {
   width: 100%;
-  height: 700px; /* Adjust height based on form length */
-  border-radius: 10px; /* Smooth corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
-  border: none;
 }
+
+/* Contact Text */
+.contact .text {
+  font-size: 2.2vh;
+  margin-bottom: 3vh;
+  color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 50vw;
+  margin: auto;
+  background: #ffffff;
+  padding: 4vh;
+  border-radius: 1vh;
+  box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+  text-align: left;
+}
+
+.input-box label {
+  font-size: 2vh;
+  font-weight: 500;
+  margin-bottom: 0.5vh;
+  color: #0E2431;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 1.5vh;
+  border: 0.2vh solid #ccc;
+  border-radius: 0.8vh;
+  font-size: 1.8vh;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  border-color: #4070f4;
+}
+
+/* Textarea */
+textarea {
+  height: 15vh;
+  resize: none;
+}
+
+/* Submit Button */
+.send-message-btn {
+  width: 100%;
+  padding: 1.8vh;
+  background: #4070f4;
+  color: #fff;
+  font-size: 2vh;
+  border: none;
+  border-radius: 0.8vh;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-message-btn:hover {
+  background: #3058c7;
+}
+
+/* Thank You Message */
+#thank-you-msg {
+  font-size: 2.2vh;
+  margin-top: 3vh;
+  padding: 2vh;
+  background: #e0ffe0;
+  border: 0.2vh solid #4caf50;
+  display: none;
+  border-radius: 0.8vh;
+  font-weight: 500;
+  color: #155724;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form {
+      max-width: 90vw;
+      padding: 3vh;
+  }
+
+  .contact .title {
+      font-size: 2.5vh;
+  }
+
+  .contact .text {
+      font-size: 2vh;
+  }
+
+  .send-message-btn {
+      font-size: 1.8vh;
+  }
+}
+
 
 
 /* Footer CSS */

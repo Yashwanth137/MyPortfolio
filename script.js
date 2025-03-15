@@ -46,3 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: { el: ".swiper-pagination", clickable: true },
   });
 });
+
