@@ -22,6 +22,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #4070f4;
 }
+
+body{
+  background: #F0F8FF;
+}
 /* navbar styling */
 nav{
   position: fixed;
@@ -112,6 +116,7 @@ nav.sticky .menu-btn{
   background-position: center;
   background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
+  background-color: #F0F8FF;
 }
 .home .home-content{
   width: 90%;
@@ -376,8 +381,6 @@ section .button button:hover{
   }
 }
 
-
-/* Contact Section */
 /* Contact Section */
 .contact {
   padding: 8vh 5vw;
@@ -386,34 +389,23 @@ section .button button:hover{
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* Contact Title - Same Effect as Pricing & Services */
+/* Contact Title Styling */
 .contact .title {
   font-size: 3vh;
   font-weight: bold;
-  margin-bottom: 2vh;
+  margin-bottom: 10px; /* Add more space below */
   color: #0E2431;
   position: relative;
   display: inline-block;
-  padding-bottom: 5px;
+  padding-bottom: 8px; /* Adjust spacing for better balance */
 }
 
-/* Underline Effect */
-.contact .title::after {
-  content: '';
-  width: 50%;
-  height: 3px;
-  background: #4070f4;
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%);
-  transition: all 0.3s ease-in-out;
-}
 
-/* Hover Effect */
+
 .contact .title:hover::after {
-  width: 100%;
+  width: 120px; /* Expand on hover for a nice effect */
 }
+
 
 /* Contact Text */
 .contact .text {
@@ -424,99 +416,60 @@ section .button button:hover{
 
 /* Contact Form */
 .contact-form {
-  max-width: 50vw;
-  margin: auto;
-  background: #ffffff;
-  padding: 4vh;
-  border-radius: 1vh;
-  box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.1);
-}
-
-/* Form Fields */
-.input-box {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2vh;
+  max-width: 500px;
+  margin: 0 auto;
   text-align: left;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.input-box label {
-  font-size: 2vh;
-  font-weight: 500;
-  margin-bottom: 0.5vh;
-  color: #0E2431;
+/* Input Fields */
+.contact-form .input-group {
+  margin-bottom: 15px;
 }
 
-.input-box input,
-.input-box textarea {
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  padding: 1.5vh;
-  border: 0.2vh solid #ccc;
-  border-radius: 0.8vh;
-  font-size: 1.8vh;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.input-box input:focus,
-.input-box textarea:focus {
-  border-color: #4070f4;
-}
-
-/* Textarea */
-textarea {
-  height: 15vh;
-  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 /* Submit Button */
-.send-message-btn {
-  width: 100%;
-  padding: 1.8vh;
+.contact-btn {
+  display: inline-block;
   background: #4070f4;
-  color: #fff;
-  font-size: 2vh;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
   border: none;
-  border-radius: 0.8vh;
   cursor: pointer;
-  transition: all 0.3s ease;
+  width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
-.send-message-btn:hover {
-  background: #3058c7;
+.contact-btn:hover {
+  background: #3056d3;
 }
 
-/* Thank You Message */
-#thank-you-msg {
-  font-size: 2.2vh;
-  margin-top: 3vh;
-  padding: 2vh;
-  background: #e0ffe0;
-  border: 0.2vh solid #4caf50;
-  display: none;
-  border-radius: 0.8vh;
-  font-weight: 500;
-  color: #155724;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-form {
-      max-width: 90vw;
-      padding: 3vh;
-  }
-
-  .contact .title {
-      font-size: 2.5vh;
-  }
-
-  .contact .text {
-      font-size: 2vh;
-  }
-
-  .send-message-btn {
-      font-size: 1.8vh;
-  }
+/* Success Message */
+.success-message {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: green;
+  font-weight: bold;
 }
 
 
