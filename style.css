@@ -145,6 +145,7 @@ nav.sticky .menu-btn {
 
 .home {
   height: 100vh;
+  min-height: 0;
   width: 100%;
   background: url("images/background.png") no-repeat;
   background-size: cover;
@@ -786,9 +787,27 @@ footer .text span a:hover {
     display: block;
   }
 
+  .home {
+    height: auto;
+    min-height: auto;
+    padding: 100px 0 40px;
+  }
+
   .home .home-content {
     padding: 30px;
     border-radius: 15px;
+  }
+
+  section {
+    padding-top: 20px;
+  }
+
+  section .content {
+    margin: 20px auto;
+  }
+
+  .stats-bar {
+    margin-top: 25px;
   }
 
   .home .text-two {
