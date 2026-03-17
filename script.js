@@ -31,14 +31,16 @@ const showNavMenu = () => {
   navBar.classList.add("active");
   menuBtn.style.opacity = "0";
   menuBtn.style.pointerEvents = "none";
+  menuBtn.setAttribute("aria-expanded", "true");
   body.style.overflow = "hidden";
 };
 
 const hideNavMenu = () => {
   navBar.classList.remove("active");
-  menuBtn.style.opacity = "1";
-  menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = "auto";
+  menuBtn.style.opacity = "";
+  menuBtn.style.pointerEvents = "";
+  menuBtn.setAttribute("aria-expanded", "false");
+  body.style.overflow = "";
 };
 
 // Open and Close Side Menu
@@ -52,20 +54,62 @@ document.querySelectorAll(".menu li a").forEach((link) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   var swiper = new Swiper(".mySwiper", {
-    loop: true, // Enables infinite scrolling
+    loop: true,
     autoplay: {
-      delay: 2000, // Adjust speed as needed
-      disableOnInteraction: false, // Keeps autoplay running even after interaction
+      delay: 2000,
+      disableOnInteraction: false,
     },
-    speed: 800, // Smooth transition speed
-    slidesPerView: "auto", // Allows multiple images at once
-    spaceBetween: 20, // Adjust spacing between images
-    centeredSlides: false, // Prevents forced centering
+    speed: 800,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    centeredSlides: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 20 }, // Medium screens
-      1024: { slidesPerView: 3, spaceBetween: 30 }, // Large screens
+      768: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
     }
   });
+
+  // Count-up animation for stats bar
+  const counters = document.querySelectorAll(".stat-number");
+  let started = false;
+
+  function animateCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const duration = 1500;
+      const increment = target / (duration / 16);
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.ceil(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target;
+        }
+      };
+      updateCounter();
+    });
+  }
+
+  // Trigger count-up when stats bar scrolls into view
+  const statsBar = document.querySelector(".stats-bar");
+  if (statsBar) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          animateCounters();
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(statsBar);
+  }
 });
 
 
@@ -85,9 +129,18 @@ async function fetchExchangeRates() {
 
   } catch (error) {
     console.error("Error fetching exchange rates:", error);
+    document.getElementById("london-price").innerText = "(Rates temporarily unavailable)";
+    document.getElementById("canada-price").innerText = "(Rates temporarily unavailable)";
+    document.getElementById("usa-price").innerText = "(Rates temporarily unavailable)";
   }
 }
 
 // Call the function on page load
 fetchExchangeRates();
+
+// Dynamic copyright year
+const footerYear = document.getElementById("footer-year");
+if (footerYear) {
+  footerYear.textContent = new Date().getFullYear();
+}
 

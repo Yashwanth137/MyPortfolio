@@ -1,75 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Call</title>
+  <title>Book a Call - Karthikeya Kusuma Math Tutoring</title>
+  <meta name="description"
+    content="Book a free introductory call with Karthikeya Kusuma for personalized math tutoring." />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    .form-container {
-      background: white;
+      min-height: 100vh;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 500px;
-    }
-    .form-container h2 {
-      margin-bottom: 15px;
-      color: #333;
-    }
-    .input-group {
-      text-align: left;
-      margin-bottom: 12px;
-    }
-    label {
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      background: #4070f4;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background: white;
-      color: #4070f4;
-      border: 2px solid #4070f4;
-    }
-    /* Error message styling */
-    .error-message {
-      display: none;
-      color: red;
-      font-size: 18px;
-      margin-top: 15px;
     }
   </style>
 </head>
+
 <body>
 
   <div class="form-container">
@@ -79,45 +28,48 @@
     <p id="error-message" class="error-message"></p>
 
     <!-- Contact Form -->
-    <form id="contact-form">
+    <form id="contact-form" class="contact-form">
       <input type="hidden" name="access_key" value="b29bdf14-d94b-4eae-963d-2485ebfdc529" />
 
       <div class="input-group">
         <label for="name">Name <span class="required">*</span></label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required aria-label="Your full name">
       </div>
 
       <div class="input-group">
         <label for="mobile">Mobile <span class="required">*</span></label>
-        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10,15}" placeholder="Enter mobile number">
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10,15}" placeholder="Enter mobile number"
+          aria-label="Mobile phone number">
       </div>
 
       <div class="input-group">
         <label for="grade">Student’s Grade</label>
-        <input type="text" id="grade" name="grade" placeholder="e.g. 8th Grade">
+        <input type="text" id="grade" name="grade" placeholder="e.g. 8th Grade" aria-label="Student grade level">
       </div>
 
       <div class="input-group">
         <label for="math_score">Math Score (Average)</label>
-        <input type="number" id="math_score" name="math_score" min="0" max="100" placeholder="e.g. 85">
+        <input type="number" id="math_score" name="math_score" min="0" max="100" placeholder="e.g. 85"
+          aria-label="Average math score">
       </div>
 
       <div class="input-group">
         <label for="email">Email (Optional)</label>
-        <input type="email" id="email" name="email" placeholder="Enter email (optional)">
+        <input type="email" id="email" name="email" placeholder="Enter email (optional)" aria-label="Email address">
       </div>
 
       <div class="input-group">
         <label for="expectations">Parents’ Expectations from Tutor</label>
-        <textarea id="expectations" name="expectations" rows="4" placeholder="Write your expectations..."></textarea>
+        <textarea id="expectations" name="expectations" rows="4" placeholder="Write your expectations..."
+          aria-label="Parents expectations from tutor"></textarea>
       </div>
 
-      <button type="submit">Send Message</button>
+      <button type="submit" class="contact-btn">Send Message</button>
     </form>
   </div>
 
   <script>
-    document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    document.getElementById("contact-form").addEventListener("submit", async function (event) {
       event.preventDefault();
       let formData = new FormData(this);
       let errorElement = document.getElementById("error-message");
@@ -145,4 +97,5 @@
   </script>
 
 </body>
+
 </html>
