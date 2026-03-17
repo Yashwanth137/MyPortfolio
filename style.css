@@ -1,33 +1,39 @@
 /* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
 }
+
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: #6e93f7;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #4070f4;
+  width: 10px;
 }
 
-body{
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6e93f7;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4070f4;
+}
+
+body {
   background: #F0F8FF;
 }
+
 /* navbar styling */
-nav{
+nav {
   position: fixed;
   width: 100%;
   padding: 20px 0;
@@ -35,60 +41,73 @@ nav{
   transition: all 0.3s ease;
   font-family: 'Ubuntu', sans-serif;
 }
-nav.sticky{
+
+nav.sticky {
   background: #4070f4;
   padding: 13px 0;
 }
-nav .navbar{
+
+nav .navbar {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
 }
-nav .navbar .logo a{
+
+nav .navbar .logo a {
   font-weight: 500;
   font-size: 35px;
   color: #4070f4;
 }
-nav.sticky .navbar .logo a{
+
+nav.sticky .navbar .logo a {
   color: #fff;
 }
-nav .navbar .menu{
+
+nav .navbar .menu {
   display: flex;
   position: relative;
 }
-nav .navbar .menu li{
+
+nav .navbar .menu li {
   list-style: none;
   margin: 0 8px;
 }
-.navbar .menu a{
+
+.navbar .menu a {
   font-size: 18px;
   font-weight: 500;
   color: #0E2431;
   padding: 6px 0;
   transition: all 0.4s ease;
 }
-.navbar .menu a:hover{
+
+.navbar .menu a:hover {
   color: #4070f4;
 }
-nav.sticky .menu a{
+
+nav.sticky .menu a {
   color: #FFF;
 }
-nav.sticky .menu a:hover{
-  color: #0E2431;
+
+nav.sticky .menu a:hover {
+  color: #ffd700;
 }
-.navbar .media-icons a{
+
+.navbar .media-icons a {
   color: #4070f4;
   font-size: 18px;
   margin: 0 6px;
 }
-nav.sticky .media-icons a{
+
+nav.sticky .media-icons a {
   color: #FFF;
 }
+
 /* Side Navigation Menu Button CSS */
 nav .menu-btn,
-.navbar .menu .cancel-btn{
+.navbar .menu .cancel-btn {
   position: absolute;
   color: #fff;
   right: 30px;
@@ -98,27 +117,33 @@ nav .menu-btn,
   transition: all 0.3s ease;
   display: none;
 }
-nav .menu-btn{
+
+nav .menu-btn {
   color: #4070f4;
 }
-nav.sticky .menu-btn{
+
+nav.sticky .menu-btn {
   color: #FFF;
 }
-.navbar .menu .menu-btn{
+
+.navbar .menu .menu-btn {
   color: #fff;
 }
+
 /* home section styling */
 /* Styling for the Quote */
 .quote {
   font-size: 1.2rem;
   font-style: italic;
-  color: #555; /* Subtle color */
+  color: #555;
+  /* Subtle color */
   text-align: center;
-  margin: 20px 0; /* Adds spacing above & below */
+  margin: 20px 0;
+  /* Adds spacing above & below */
   max-width: 600px;
 }
 
-.home{
+.home {
   height: 100vh;
   width: 100%;
   background: url("images/background.png") no-repeat;
@@ -128,7 +153,8 @@ nav.sticky .menu-btn{
   font-family: 'Ubuntu', sans-serif;
   background-color: #F0F8FF;
 }
-.home .home-content{
+
+.home .home-content {
   width: 90%;
   height: 100%;
   margin: auto;
@@ -136,30 +162,36 @@ nav.sticky .menu-btn{
   flex-direction: column;
   justify-content: center;
 }
-.home .text-one{
+
+.home .text-one {
   font-size: 25px;
   color: #0E2431;
 }
-.home .text-two{
+
+.home .text-two {
   color: #0E2431;
   font-size: 75px;
   font-weight: 600;
   margin-left: -3px;
 }
-.home .text-three{
+
+.home .text-three {
   font-size: 40px;
   margin: 5px 0;
   color: #4070f4;
 }
-.home .text-four{
+
+.home .text-four {
   font-size: 23px;
   margin: 5px 0;
   color: #0E2431;
 }
-.home .button{
+
+.home .button {
   margin: 14px 0;
 }
-.home .button button{
+
+.home .button button {
   outline: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -171,17 +203,17 @@ nav.sticky .menu-btn{
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
-.home .button button:hover{
+
+.home .button button:hover {
   border-color: #4070f4;
   background-color: #fff;
   color: #4070f4;
 }
 
-/* Remove background on smaller screens */
+/* Hero background optimization (image restored on right layout) */
 @media (max-width: 1440px) {
   .home {
-      background: none; /* Removes the background image */
-      background-color: #F0F8FF; /* Set a solid background color */
+    background-image: none !important;
   }
 }
 
@@ -189,33 +221,38 @@ nav.sticky .menu-btn{
 /* About Section Styling */
 /* Those Elements Where We Have Apply Same CSS,
  I'm Selecting Directly 'Section Tag' and 'Class'  */
-section{
+section {
   padding-top: 40px;
 }
-section .content{
+
+section .content {
   width: 80%;
   margin: 40px auto;
   font-family: 'Poppins', sans-serif;
 }
-.about .about-details{
+
+.about .about-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-section .title{
+
+section .title {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
 }
-section .title span{
+
+section .title span {
   color: #0E2431;
   font-size: 30px;
   font-weight: 600;
   position: relative;
   padding-bottom: 8px;
 }
+
 section .title span::before,
-section .title span::after{
+section .title span::after {
   content: '';
   position: absolute;
   height: 3px;
@@ -224,38 +261,48 @@ section .title span::after{
   left: 0;
   bottom: 0;
 }
-section .title span::after{
+
+section .title span::after {
   bottom: -7px;
   width: 70%;
   left: 50%;
   transform: translateX(-50%);
 }
-.about .about-details .left{
+
+.about .about-details .left {
   width: 45%;
 }
-.about .left img{
-  height: 400px;
-  width: 400px;
+
+.about .left img {
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 12px;
 }
-.about-details .right{
+
+.about-details .right {
   width: 55%;
 }
-section  .topic{
+
+section .topic {
   color: #0E2431;
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-.about-details .right p{
+
+.about-details .right p {
   text-align: justify;
   color: #0E2431;
 }
-section .button{
+
+section .button {
   margin: 16px 0;
 }
-section .button button{
+
+section .button button {
   outline: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -267,7 +314,8 @@ section .button button{
   cursor: pointer;
   transition: all 0.4s ease;
 }
-section .button button:hover{
+
+section .button button:hover {
   border-color: #4070f4;
   background-color: #fff;
   color: #4070f4;
@@ -279,6 +327,7 @@ section .button button:hover{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 /* Center the second-row card */
 .boxes.row.center {
   display: flex;
@@ -300,6 +349,8 @@ section .button button:hover{
 .services .boxes .box:hover {
   background: #4070f4;
   color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(64, 112, 244, 0.3);
 }
 
 .services .boxes .box .icon {
@@ -334,92 +385,65 @@ section .button button:hover{
 }
 
 .book-btn:hover {
-  background: #0E2431;
-}
-
-/* Testimonials Container */
-.testimonial-container {
-  display: flex;
-  flex-wrap: wrap; /* Ensures responsiveness */
-  justify-content: center; /* Centers cards */
-  gap: 3vh; /* Space between cards */
-  padding: 5vh 2vw;
-}
-
-/* Individual Testimonial Card */
-.testimonial-card {
-  background: #ffffff;
-  padding: 2vh;
-  border-radius: 2vh;
-  max-width: 25vw; /* Adjust width */
-  text-align: center;
-  box-shadow: 0 0.4vh 1vh rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-/* WhatsApp Screenshot Image */
-.testimonial-img {
-  width: 100%; /* Ensures it fills the container */
-  height: 20vh; /* Set a fixed height */
-  object-fit: cover; /* Ensures uniform cropping without distortion */
-  border-radius: 2vh;
-  transition: transform 0.2s ease-in-out;
-}
-
-.testimonial-img:hover {
-  transform: scale(1.05);
-}
-
-.close {
-  position: absolute;
-  top: 2vh;
-  right: 2vw;
-  font-size: 4vh;
+  background: #ffa726;
   color: #fff;
-  cursor: pointer;
 }
 
-/* Testimonial Footer */
-.testimonial-footer {
+/* Testimonials Section */
+.testimonials {
+  background: linear-gradient(180deg, #F0F8FF 0%, #e8eef5 50%, #F0F8FF 100%);
+  padding-bottom: 0;
+}
+
+/* Stats Counter Bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #4070f4, #6c5ce7);
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.stats-bar .stat-item {
   text-align: center;
-  margin-top: 80px; /* Increased space below the images */
+  color: #fff;
 }
 
-/* Highlighted Text */
-.highlighted-text {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff7f27; /* Adjust as needed */
+.stats-bar .stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  display: block;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-/* Disclaimer */
-.disclaimer {
-  font-size: 14px;
-  color: #555;
-  font-style: italic;
+.stats-bar .stat-label {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.9;
   margin-top: 5px;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .testimonial-container {
-    flex-direction: column;
-    align-items: center;
+  .stats-bar {
+    gap: 30px;
+    padding: 35px 15px;
   }
 
-  .testimonial-card {
-    max-width: 80vw;
+  .stats-bar .stat-number {
+    font-size: 32px;
   }
 }
 
 /* Contact Section */
 .contact {
-  padding: 8vh 5vw;
+  padding: 80px 5%;
   text-align: center;
   background: #F0F8FF;
   font-family: 'Ubuntu', sans-serif;
@@ -427,26 +451,29 @@ section .button button:hover{
 
 /* Contact Title Styling */
 .contact .title {
-  font-size: 3vh;
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 10px; /* Add more space below */
+  margin-bottom: 10px;
+  /* Add more space below */
   color: #0E2431;
   position: relative;
   display: inline-block;
-  padding-bottom: 8px; /* Adjust spacing for better balance */
+  padding-bottom: 8px;
+  /* Adjust spacing for better balance */
 }
 
 
 
 .contact .title:hover::after {
-  width: 120px; /* Expand on hover for a nice effect */
+  width: 120px;
+  /* Expand on hover for a nice effect */
 }
 
 
 /* Contact Text */
 .contact .text {
-  font-size: 2.2vh;
-  margin-bottom: 3vh;
+  font-size: 22px;
+  margin-bottom: 30px;
   color: #555;
 }
 
@@ -500,12 +527,41 @@ section .button button:hover{
   background: #3056d3;
 }
 
-/* Success Message */
+/* Required asterisk */
+.required {
+  color: red;
+}
+
+/* Form Container for standalone pages */
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Success/Error Messages */
 .success-message {
   margin-top: 15px;
   font-size: 1.2em;
   color: green;
   font-weight: bold;
+}
+
+.error-message {
+  display: none;
+  color: red;
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 
@@ -533,7 +589,8 @@ footer .text span a {
 
 footer .text span a:hover {
   text-decoration: underline;
-  color: #ffd700; /* Gold color on hover */
+  color: #ffd700;
+  /* Gold color on hover */
 }
 
 /* Scroll to Top Button */
@@ -547,22 +604,24 @@ footer .text span a:hover {
   font-size: 18px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.15);
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
   transition: 0.3s ease-in-out;
   text-decoration: none;
 }
 
 .scroll-button a:hover {
-  background: #3057d5; /* Darker shade on hover */
+  background: #3057d5;
+  /* Darker shade on hover */
 }
 
 /* Swiper Container */
 .swiper {
-  max-width: 90%; /* Prevents extra spacing */
+  max-width: 90%;
   margin: auto;
   overflow: hidden;
   position: relative;
-  padding-bottom: 20px; /* Space below for better layout */
+  padding-bottom: 10px;
 }
 
 /* Swiper Wrapper */
@@ -577,61 +636,115 @@ footer .text span a:hover {
   justify-content: center;
   align-items: center;
   max-width: 300px;
+  padding: 10px;
 }
 
-/* Swiper Images */
+/* Swiper Card Styling */
 .swiper-slide img {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   max-height: 350px;
   object-fit: contain;
   display: block;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* REMOVE NAVIGATION ARROWS */
-.swiper-button-next,
-.swiper-button-prev {
-  display: none !important;
+.swiper-slide img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(64, 112, 244, 0.25);
+}
+
+/* Testimonial Footer */
+.testimonial-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.highlighted-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff7f27;
+}
+
+.disclaimer {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Swiper Pagination Dots */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #b0c4de;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #4070f4;
+  width: 24px;
+  border-radius: 5px;
 }
 
 
 
 /* Responsive Media Query */
 @media (max-width: 1190px) {
-  section .content{
-    width: 85%;
+  section .content {
+    width: 90%;
   }
 }
+
 @media (max-width: 1000px) {
-  .about .about-details{
+  .home {
+    background-image: none !important;
+  }
+
+  .about .about-details {
     justify-content: center;
     flex-direction: column;
   }
-  .about .about-details .left{
+
+  .about .about-details .left {
     display: flex;
     justify-content: center;
     width: 100%;
   }
-  .about-details .right{
+
+  .about-details .right {
     width: 90%;
     margin: 40px 0;
   }
-  .services .boxes .box{
+
+  .services .boxes .box {
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
   }
 }
+
 @media (max-width: 900px) {
-  .about .left img{
-    height: 350px;
-    width: 350px;
+  .about .left img {
+    max-width: 350px;
   }
 }
+
 @media (max-width: 750px) {
-  nav .navbar{
+  nav .navbar {
     width: 90%;
   }
-  nav .navbar .menu{
+
+  nav .navbar .menu {
     position: fixed;
     left: -100%;
     top: 0;
@@ -644,62 +757,83 @@ footer .text span a:hover {
     align-items: center;
     transition: all 0.5s ease;
   }
-  .navbar.active .menu{
+
+  .navbar.active .menu {
     left: 0;
   }
-  nav .navbar .menu a{
+
+  nav .navbar .logo a {
+    font-size: 28px;
+  }
+
+  nav .navbar .menu a {
     font-size: 23px;
     display: block;
     color: #fff;
     margin: 10px 0;
   }
-  nav.sticky .menu a:hover{
+
+  nav.sticky .menu a:hover {
     color: #4070f4;
   }
-  nav .navbar .media-icons{
+
+  nav .navbar .media-icons {
     display: none;
   }
+
   nav .menu-btn,
-  .navbar .menu .cancel-btn{
+  .navbar .menu .cancel-btn {
     display: block;
   }
-  .home .text-two{
-    font-size: 65px;
+
+  .home .home-content {
+    padding: 30px;
+    border-radius: 15px;
   }
-  .home .text-three{
-    font-size: 35px;
+
+  .home .text-two {
+    font-size: 40px;
+    line-height: 1.2;
   }
-  .skills .skills-details{
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+  .home .text-three {
+    font-size: 28px;
   }
-  .skills-details .text{
-    width: 100%;
-    margin-bottom: 50px;
+
+  .home .text-four {
+    font-size: 18px;
   }
-  .skills-details .boxes{
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .services .boxes .box{
+
+  .services .boxes .box {
     margin: 20px 0;
     width: 100%;
   }
-  .contact .text{
+
+  .contact .text {
     width: 100%;
-}
-}
-@media (max-width: 500px){
-  .home .text-two{
-    font-size: 55px;
   }
-  .home .text-three{
-    font-size: 33px;
+}
+
+@media (max-width: 500px) {
+  nav .navbar .logo a {
+    font-size: 24px;
   }
-  .skills-details .boxes .per{
-    font-size: 50px;
-    color: #4070f4;
+
+  .home .text-two {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .home .text-three {
+    font-size: 22px;
+  }
+
+  .home .text-four {
+    font-size: 15px;
+  }
+
+  .quote {
+    font-size: 1rem;
+    padding: 0 10px;
   }
 }
